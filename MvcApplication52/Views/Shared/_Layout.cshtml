@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="esapp">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <link href="~/bower-ui-grid-master/ui-grid.css" rel="stylesheet" />
+    <link href="~/Scripts/JsonFormatter/json-formatter.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-2.1.4.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-animate.js"></script>
+    <script src="~/Scripts/angular-touch.js"></script>
+    <script src="~/Scripts/angular-sanitize.min.js"></script>
+    <script src="~/Scripts/angular-cookies.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="~/Scripts/jquery.flot.min.js"></script>
+    <script src="~/bower-ui-grid-master/ui-grid.js"></script>
+    <script src="~/angscript/AppModule.js"></script>
+    <script src="~/angscript/Service.js"></script>
+    <script src="~/angscript/Controller.js"></script>
+    <script src="~/angscript/CookieController.js"></script>
+    <script src="~/angscript/IndicesController.js"></script>
+    <script src="~/angscript/CpuAndMemory.js"></script>
+    <script src="/Modules/Siparis/SiparisController.js"></script>
+    <script src="/Modules/Detay/DetayController.js"></script>
+    <script src="/Modules/ParameterPage/ParameterPageController.js"></script>
+    <script src="~/Scripts/JsonFormatter/json-formatter.min.js"></script>
+
+
+    @*@Styles.Render("~/Content/css")*@
+    @*@Scripts.Render("~/bundles/modernizr")*@
+</head>
+<body style="  overflow-x: hidden;">
+    <div class="row">
+        <!-- Static navbar -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">ES</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="#">Indices</a></li>
+                        <li><a href="/home/browser">Browser</a></li>
+                        <li><a href="#">Structured Query</a></li>
+                        <li><a href="#">Any Request</a></li>
+                        <li><a href="/home/cpu">CPU and Memory</a></li>
+                    </ul>
+                    <div class="pull-right" ng-controller="CookieController">
+                        <ul class="list-unstyled">
+                            <li style="float:left">Ip Address</li>
+                            <li style="float:left">:</li>
+                            <li style="float:left"><input ng-model="ipadress" /></li>
+                            <li style="float:left">&nbsp;</li>
+                            <li style="float:left"><button ng-click="setIpAddress()">Connect</button></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div><!--/.container-fluid -->
+        </nav>
+        @RenderBody()
+    </div> <!-- /container -->
+
+
+</body>
+</html>

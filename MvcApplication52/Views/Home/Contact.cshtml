@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    Layout = null;
+}
+<html lang="en" ng-app="sites">
+<head>
+    <title></title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/simple-sidebar.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-2.1.4.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/angscript/MenuController.js"></script>
+    <script src="~/Scripts/ng-infinite-scroll.min.js"></script>
+</head>
+<body>
+
+    <div id="wrapper">
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Menü
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Dashboard</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed pull-left" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" id="menu-toggle">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+
+                </div><!--/.container-fluid -->
+            </nav>
+        </div>
+        <!-- Sidebar -->
+        <div class="row">
+            <div ng-controller="MenuController">
+                <ul class="list-group text-center">
+                    <li ng-repeat="item in menus" ng-click="sendPost(item.key)" class="list-group-item">
+                        <a href="#">{{item.value}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div ng-app='myApp' ng-controller='MenuController'>
+            <div infinite-scroll='reddit.nextPage()' infinite-scroll-disabled='reddit.busy' infinite-scroll-distance='1'>
+                <div ng-repeat='item in reddit.items'>
+                    <span class='score'>{{item.score}}</span>
+                    <span class='title'>
+                        <a ng-href='{{item.url}}' target='_blank'>{{item.title}}</a>
+                    </span>
+                    <small>
+                        by {{item.author}} -
+                        <a ng-href='http://reddit.com{{item.permalink}}' target='_blank'>{{item.num_comments}} comments</a>
+                    </small>
+                    <div style='clear: both;'></div>
+                </div>
+                <div ng-show='reddit.busy'><img src="~/Images/ajax-loader.gif" width="25px;" />&nbsp;&nbsp;Yükleniyor...</div>
+            </div>
+            
+        </div>
+        <footer>
+            <div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+                <ul class="nav navbar-nav col-md-12 col-lg-12 col-sm-12 col-xs-12 text-center">
+                    <li class="col-xs-push-6 col-md-6 col-lg-6 col-sm-6 col-xs-6"><a href="#"><h4>Sırala</h4> </a></li>
+                    <li class="col-xs-pull-6 col-md-6 col-lg-6 col-sm-6 col-xs-6"><a href="#"><h4>Filtre</h4> </a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <!-- /#page-content-wrapper -->
+    
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+        $("#wrapper").toggleClass("");
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿@model Nest.IClusterStateResponse
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="" ng-controller="indicesController">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <button class="btn btn-default dropdown-toggle" style="margin-left: 10px;" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+                        ng-repeat="(key,value) in allindices.indices">
+                    <strong> {{key}}</strong>
+                    <span class="caret"></span>
+                    <div>size({{((value.total.store.size_in_bytes/1024)/1024) | number:2}} mb) </div>
+                    <div>doc({{value.total.docs.count}})</div>
+                </button>
+                @*<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>*@
+            </h3>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default col-md-12" ng-controller="indicesController">
+    <div class="panel-heading">
+        nodes
+    </div>
+    <div class=panel-body>
+        <ul class="list-unstyled pull-left col-md-2" ng-repeat="item in allnodes">
+            <li class="active">{{item.name}}</li>
+            <li>{{item.transport_address}}</li>
+        </ul>
+
+    </div>
+</div>

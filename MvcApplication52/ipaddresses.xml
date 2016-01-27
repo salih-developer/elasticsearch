@@ -1,0 +1,9 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <ipadresses>
+    <url>http://192.168.66.30:9200/</url>
+  </ipadresses>
+  <ipadresses>
+    <url>http://192.168.66.30:920/</url>
+  </ipadresses>
+</NewDataSet>

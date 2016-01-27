@@ -1,0 +1,78 @@
+﻿@model $model$
+
+@{
+  ViewBag.Title = "";
+  Layout = null;
+}
+<html lang="en" ng-app="sites">
+<head>
+    <title></title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/simple-sidebar.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/angscript/MenuController.js"></script>
+
+</head>
+<body>
+
+    <div id="wrapper" class="toggled">
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Menü
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Dashboard</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed pull-left" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" id="menu-toggle">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+
+                </div><!--/.container-fluid -->
+            </nav>
+        </div>
+        <!-- Sidebar -->
+        <div class="row">
+            <div ng-controller="MenuController">
+                <ul class="list-group text-center">
+                    <li>listte1</li>
+                    <li>listte2</li>
+                    <li>listte3</li>
+                    <li>listte4</li>
+                    <li>listte5</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+
+
+</body>
+</html>

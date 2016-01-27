@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "About";
+    Layout = null;
+}
+
+<!doctype html>
+<html ng-app="demo">
+<head>
+    <meta charset="utf-8">
+    <title>AngularJS directive demo</title>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-sanitize.min.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/JsonFormatter/json-formatter.min.js"></script>
+    <link href="~/Scripts/JsonFormatter/json-formatter.min.css" rel="stylesheet" />
+    <script src="~/Scripts/demo.js"></script>
+</head>
+<body ng-controller="MainCtrl">
+    <div class="container">
+        <div class="row marketing">
+            <div class="tests">
+                <div class="result">
+                    <json-formatter json="complex" open="1"></json-formatter>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

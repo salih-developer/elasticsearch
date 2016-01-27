@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "title";
+}
+<style>
+    chart{
+    display:none;
+    width:400px;
+    height:200px;
+}
+</style>
+<div ng-controller="cpuandmemory">
+    
+    <div class="panel-heading">
+        nodes
+    </div>
+    <div class=panel-body>
+        <ul class="list-unstyled pull-left col-md-5" >
+            <li class="active">Node1</li>
+            <li>
+                <chart ng-model='data'></chart>
+            </li>
+        </ul>
+        <ul class="list-unstyled pull-left col-md-5">
+            <li class="active">Node2</li>
+            <li>
+                <chart ng-model='data1'></chart>
+            </li>
+        </ul>
+
+    </div>{{timerData('Node1')}}
+    {{timerData1('Node2')}}
+</div>

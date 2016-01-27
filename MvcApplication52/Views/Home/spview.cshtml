@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "spview";
+}
+
+<div ng-controller="MainController" class="container">
+    <div class="well well-sm"><p><b><h1>Bu Ana Sayfadır</h1></b></p></div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <u class="nav">
+                <li><a href="#Siparis">Siparis Sayfası</a></li>
+                <li><a href="#Detay">Siparis Detay</a></li>
+                <li><a href="#ParameterPage/16789">Detaylı Parametre</a></li>
+                <li><a href="#page4"> Page 4 </a></li>
+                <li><a href="#page5"> Page 5 </a></li>
+            </u>
+        </div>
+        <div class="col-md-9">
+            <div ng-view></div>
+        </div>
+        <script type="text/ng-template" id="page4.html">
+            <h2> Page 4 </h2> Hi, {{myName}}
+        </script>
+        <script type="text/ng-template" id="page5.html">
+            <h2> Page 5 </h2> Hi, {{myName}}
+        </script>
+    </div>
+</div>
